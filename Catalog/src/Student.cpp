@@ -26,6 +26,13 @@ Student::Student(char *_nume,char *_prenume,char *_CNP,char *_numar_telefon,
     specializare=new char[strlen(_specializare)+1];
     strcpy(specializare,_specializare);
 }
+Student::Student(Persoana &p,char *_specializare,char *_facultate,int _An_Studiu): Persoana(p,1),An_Studiu(_An_Studiu)
+{
+    facultate=new char[strlen(_facultate)+1];
+    strcpy(facultate,_facultate);
+    specializare=new char[strlen(_specializare)+1];
+    strcpy(specializare,_specializare);
+}
 ostream& operator<<(ostream &ostr, Student &n )
 {
     n.tip=1;
@@ -55,6 +62,7 @@ istream& operator>>(istream &istr, Student &n )
     cout<<"Introduceti anul de studiu:";
     istr>>n.An_Studiu;
     cout<<endl;
+    istr.ignore();
     return istr;
 }
 Student &Student::operator=(const Student &stud)

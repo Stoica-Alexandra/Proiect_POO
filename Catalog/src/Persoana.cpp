@@ -7,7 +7,9 @@ char* mic(char* str);
 void Persoana::Set_email(char *_nume,char *_prenume)
 {
     char domeniu[50];
-    if(tip==1)
+    if(tip==2)
+        strcpy(domeniu,"usm.ro");
+    else if(tip==1)
         strcpy(domeniu,"student.usv.ro");
     else
         strcpy(domeniu,"nedefinit");
@@ -121,7 +123,10 @@ istream& operator>>(istream &istr, Persoana &n )
     strcpy(n.numar_telefon,n.buf);
     n.Set_email(n.nume,n.prenume);
     if(n.tip==0)
+    {
         cout<<endl;
+        istr.ignore();
+    }
     return istr;
 
 }

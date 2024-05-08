@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1715109220 source:c:\users\asus\desktop\facultate\poo\proiect\catalog\main.cpp
+1715146272 source:c:\users\asus\desktop\facultate\poo\proiect\catalog\main.cpp
 	"Student.h"
 	"Persoana.h"
+	"Profesor.h"
 	<iostream>
 	<cstring>
 
@@ -9,18 +10,29 @@
 	<iostream>
 	<cstring>
 
-1715108806 source:c:\users\asus\desktop\facultate\poo\proiect\catalog\src\persoana.cpp
+1715146655 source:c:\users\asus\desktop\facultate\poo\proiect\catalog\src\persoana.cpp
 	"Persoana.h"
 	<iostream>
 	<cstring>
 
-1715108443 c:\users\asus\desktop\facultate\poo\proiect\catalog\include\student.h
+1715143897 c:\users\asus\desktop\facultate\poo\proiect\catalog\include\student.h
 	"Persoana.h"
 	<iostream>
 	<cstring>
 
-1715109202 source:c:\users\asus\desktop\facultate\poo\proiect\catalog\src\student.cpp
+1715146567 source:c:\users\asus\desktop\facultate\poo\proiect\catalog\src\student.cpp
 	"Student.h"
+	"Persoana.h"
+	<iostream>
+	<cstring>
+
+1715147335 source:c:\users\asus\desktop\facultate\poo\proiect\catalog\src\profesor.cpp
+	"Profesor.h"
+	"Persoana.h"
+	<iostream>
+	<cstring>
+
+1715147560 c:\users\asus\desktop\facultate\poo\proiect\catalog\include\profesor.h
 	"Persoana.h"
 	<iostream>
 	<cstring>

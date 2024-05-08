@@ -18,6 +18,7 @@ class Student:public Persoana
                 char *_CNP=(char *)"_nedefinit_",char *_numar_telefon=(char *)"_nedefinit_",
                 char *_specializare=(char *)"_nedefinit_",char *_facultate=(char *)"_nedefinit_",
                 int _An_Studiu=0);
+        Student(Persoana &p,char *_specializare,char *_facultate,int _An_Studiu);
         virtual ~Student();
         friend ostream& operator<<(ostream &ostr, Student &n );
         friend istream& operator>>(istream &istr, Student &n );
