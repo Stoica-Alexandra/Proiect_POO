@@ -19,7 +19,7 @@ int main()
     Student ss(p,"a","a",2);
     cout<<ss;
     cout<<"\n"<<ss.Get_parola()<<"\n\n";
-    Profesor pr(p,Titlu::profesor);
+    Profesor pr(p,Profesor::enumtitluToString(Titlu::profesor));
     cout<<pr;
     cout<<"\n"<<pr.Get_parola()<<"\n\n";
     cin>>pr;

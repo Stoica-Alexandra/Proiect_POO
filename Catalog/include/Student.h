@@ -9,6 +9,7 @@ class Student:public Persoana
 {   private:
         char buf[50];
         int An_Studiu,note[50];
+        char *grupa=nullptr;
         char *specializare=nullptr,*facultate=nullptr;
 
     public:
