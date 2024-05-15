@@ -10,6 +10,9 @@ class Persoana
     protected:
         char *nume=nullptr,*prenume=nullptr,*CNP=nullptr,*numar_telefon=nullptr;
         char *email=nullptr;
+        char *parola=nullptr;
+        char email_personal[30];
+        char adresa[30];
 
     public:
         int tip=0;
@@ -25,6 +28,8 @@ class Persoana
         void Set_nume(char *_nume);
         void Set_prenume(char *_prenume);
         void Set_CNP(char *_CNP);
+        void Set_parola(char *_CNP);
+        char * Get_parola();
         void Set_numar_telefon(char *_numar_telefon);
         Persoana &operator=(const Persoana &pers);
 };

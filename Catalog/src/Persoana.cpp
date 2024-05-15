@@ -3,7 +3,10 @@
 #include <cstring>
 using namespace std;
 char* mic(char* str);
-
+char * Persoana::Get_parola()
+{
+    return parola;
+}
 void Persoana::Set_email(char *_nume,char *_prenume)
 {
     char domeniu[50];
@@ -20,13 +23,34 @@ void Persoana::Set_email(char *_nume,char *_prenume)
 
     char *s=strtok(copieprenume," -");
 
-    sprintf(buf,"%s.%s@%s",mic(copienume),mic(s),domeniu);
-    //delete []email;
+    sprintf(buf,"%s.%s@%s",mic(s),mic(copienume),domeniu);
     email=new char[strlen(buf)+1];
     strcpy(email,buf);
     delete []copienume;
     delete []copieprenume;
 }
+void Persoana::Set_parola(char *_CNP)
+{
+    //Student123456
+    char domeniu[50];
+    if(tip==2)
+        strcpy(domeniu,"Profesor");
+    else if(tip==1)
+        strcpy(domeniu,"Student");
+    else
+        strcpy(domeniu,"Nedefinit");
+
+    delete []parola;
+    char *copieCNP=new char[7];
+    strncpy(copieCNP,_CNP+7,6);
+    copieCNP[6] = '\0';
+
+    sprintf(buf,"%s%s",domeniu,copieCNP);
+    parola=new char[strlen(buf)+1];
+    strcpy(parola,buf);
+    delete []copieCNP;
+}
+
 Persoana::Persoana(char *_nume,char *_prenume,char *_CNP,char *_numar_telefon,int _tip):tip(_tip)
 {
     nume=new char[strlen(_nume)+1];
@@ -38,6 +62,7 @@ Persoana::Persoana(char *_nume,char *_prenume,char *_CNP,char *_numar_telefon,in
     numar_telefon=new char[strlen(_numar_telefon)+1];
     strcpy(numar_telefon,_numar_telefon);
     Set_email(_nume,_prenume);
+    Set_parola(_CNP);
 }
 Persoana::Persoana(const Persoana &pers,int _tip):tip(_tip)
 {
@@ -48,6 +73,7 @@ Persoana::Persoana(const Persoana &pers,int _tip):tip(_tip)
         delete []CNP;
         delete []numar_telefon;
         delete []email;
+        delete []parola;
         nume=new char[strlen(pers.nume)+1];
         strcpy(nume,pers.nume);
         prenume=new char[strlen(pers.prenume)+1];
@@ -57,6 +83,7 @@ Persoana::Persoana(const Persoana &pers,int _tip):tip(_tip)
         numar_telefon=new char[strlen(pers.numar_telefon)+1];
         strcpy(numar_telefon,pers.numar_telefon);
         Set_email(pers.nume,pers.prenume);
+        Set_parola(pers.CNP);
     }
 }
 Persoana::~Persoana()
@@ -66,6 +93,7 @@ Persoana::~Persoana()
     delete []CNP;
     delete []numar_telefon;
     delete []email;
+    delete []parola;
 }
 Persoana&Persoana:: operator=(const Persoana &pers)
 {
@@ -76,6 +104,7 @@ Persoana&Persoana:: operator=(const Persoana &pers)
         delete []CNP;
         delete []numar_telefon;
         delete []email;
+        delete []parola;
         nume=new char[strlen(pers.nume)+1];
         strcpy(nume,pers.nume);
         prenume=new char[strlen(pers.prenume)+1];
@@ -85,6 +114,7 @@ Persoana&Persoana:: operator=(const Persoana &pers)
         numar_telefon=new char[strlen(pers.numar_telefon)+1];
         strcpy(numar_telefon,pers.numar_telefon);
         Set_email(pers.nume,pers.prenume);
+        Set_parola(pers.CNP);
     }
     return *this;
 }
@@ -110,8 +140,12 @@ istream& operator>>(istream &istr, Persoana &n )
     n.prenume=new char[strlen(n.buf)+1];
     strcpy(n.prenume,n.buf);
 
-    cout<<"Introduceti CNP-ul:";
-    istr.getline(n.buf,51);
+    do
+    {
+        cout<<"Introduceti CNP-ul:";
+        istr.getline(n.buf,51);
+    }
+    while(strlen(n.buf)!=13);
     delete []n.CNP;
     n.CNP=new char[strlen(n.buf)+1];
     strcpy(n.CNP,n.buf);
@@ -121,7 +155,10 @@ istream& operator>>(istream &istr, Persoana &n )
     delete []n.numar_telefon;
     n.numar_telefon=new char[strlen(n.buf)+1];
     strcpy(n.numar_telefon,n.buf);
+    delete []n.parola;
+    delete []n.email;
     n.Set_email(n.nume,n.prenume);
+    n.Set_parola(n.CNP);
     if(n.tip==0)
     {
         cout<<endl;

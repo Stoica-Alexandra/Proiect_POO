@@ -1,16 +1,16 @@
 # depslib dependency file v1.0
-1715146272 source:c:\users\asus\desktop\facultate\poo\proiect\catalog\main.cpp
+1715758016 source:c:\users\asus\desktop\facultate\poo\proiect\catalog\main.cpp
 	"Student.h"
 	"Persoana.h"
 	"Profesor.h"
 	<iostream>
 	<cstring>
 
-1715108806 c:\users\asus\desktop\facultate\poo\proiect\catalog\include\persoana.h
+1715752866 c:\users\asus\desktop\facultate\poo\proiect\catalog\include\persoana.h
 	<iostream>
 	<cstring>
 
-1715146655 source:c:\users\asus\desktop\facultate\poo\proiect\catalog\src\persoana.cpp
+1715755180 source:c:\users\asus\desktop\facultate\poo\proiect\catalog\src\persoana.cpp
 	"Persoana.h"
 	<iostream>
 	<cstring>
@@ -26,13 +26,13 @@
 	<iostream>
 	<cstring>
 
-1715147335 source:c:\users\asus\desktop\facultate\poo\proiect\catalog\src\profesor.cpp
+1715757868 source:c:\users\asus\desktop\facultate\poo\proiect\catalog\src\profesor.cpp
 	"Profesor.h"
 	"Persoana.h"
 	<iostream>
 	<cstring>
 
-1715147560 c:\users\asus\desktop\facultate\poo\proiect\catalog\include\profesor.h
+1715757868 c:\users\asus\desktop\facultate\poo\proiect\catalog\include\profesor.h
 	"Persoana.h"
 	<iostream>
 	<cstring>
